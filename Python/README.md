@@ -1,6 +1,6 @@
 # Python DS
 
 <ul>
-  <li>[Given a list of ints, return True if the array contains 3 next to a 3 somewhere](Python/1.py)</li>
+  <li><a href="1.py">Given a list of ints, return True if the array contains 3 next to a 3 somewhere</a></li>
 </ul>
 
