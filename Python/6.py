@@ -3,14 +3,17 @@
 # spy_game([1,2,4,0,0,7,5]) --> True
 # spy_game([1,0,2,4,0,5,7]) --> True
 # spy_game([1,7,2,0,4,5,0]) --> False
+# spy_game([0,0,7,0]) --> False
+# spy_game([0,7,0,7]) --> False
 
 
 # My Solution
 def spy_game(nums):
 
     state = ''
+
     for n in nums:
-        
+
         if n == 0:
             if state == 'zero':
                 state = 'doublezero'
@@ -18,11 +21,9 @@ def spy_game(nums):
                 state = 'zero'
         elif n == 7:
             if state == 'doublezero':
-                state = 'seven'
-            else:
-                state = ''
-
-    return state == 'seven'
+                return True
+            
+    return False
 
 
 
@@ -39,4 +40,15 @@ def spy_game(nums):
 
 
 
-print(spy_game([1,0,2,0,4,5,7]))
+
+# Solution Form Instructor
+# def spy_game(nums):
+    
+#     return any(num == 7 and nums[:i].count(0) > 1 for i,num in enumerate(nums))
+
+
+# print(spy_game([1,2,4,0,0,7,5]))
+# print(spy_game([1,0,2,4,0,5,7]))
+# print(spy_game([1,7,2,0,4,5,0]))
+# print(spy_game([0,0,7,0]))
+print(spy_game([0,7,0,7]))
